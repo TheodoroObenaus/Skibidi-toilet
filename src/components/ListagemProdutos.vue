@@ -18,9 +18,7 @@ const formatPrice = (price) => `R$ ${price.toFixed(2).replace('.', ',')}`;
 <template>
   <div>
     <h1>
-       Produtos - {{ browserWidth }} - {{ deviceWidth }} - {{
-      isMobile}} 
-      <span v-if="isMobile">É móvel</span>
+       Produtos
     </h1>
     <div class="container">
       <div class="card" v-for="produto in produtos" :key="produto.id">
@@ -84,11 +82,17 @@ const formatPrice = (price) => `R$ ${price.toFixed(2).replace('.', ',')}`;
   .card--title {
     color: white;
   }
+  h1 {
+    color: lime;
+  }
 }
 
 
 @media (min-width: 768px) and (max-width: 1024px) {  .card {
     width: 22rem;
+   }
+   h1 {
+    color: black;
    }
 }
 
