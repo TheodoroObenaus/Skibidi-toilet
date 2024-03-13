@@ -1,16 +1,23 @@
 <script setup>
-import ListagemProdutos from '@/components/ListagemProdutos.vue';
-import MenuSuperior from '@/components/MenuSuperior.vue'
-import FooterDescktop from '@/components/FooterDescktop.vue'
-import FooterMobile from '@/components/FooterMobile.vue'
+import { useMonitor } from '@/composables/monitor';
+import { useMobile } from '@/composables/mobile';
+
+const { menu } = useMonitor();
+const { footer } = useMobile();
 
 </script>
 
 <template>
-  <MenuSuperior />
-  <ListagemProdutos />
-  <FooterDescktop />
-  <footerMobile />
+   <div>
+    <component :is="menu" />
+    <main>
+      <router-view />
+    </main>
+    <component :is="footer" />
+      <footer>
+        <p>Copyright &copy; 2024</p>
+      </footer>
+  </div>
 </template>
 
 <style scoped>

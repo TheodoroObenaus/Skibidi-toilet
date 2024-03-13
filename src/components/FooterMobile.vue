@@ -1,6 +1,8 @@
 <script setup>
 
-
+import CartPlus from 'vue-material-design-icons/CartPlus.vue';
+import Account from 'vue-material-design-icons/Account.vue';
+import Menu from 'vue-material-design-icons/Star.vue';
 
 </script>
 
@@ -8,15 +10,18 @@
 
 <footer>
     <div class="texto">
-            <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Totam maiores modi fugiat. Aperiam, officia? 
-            </p>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat dolor numquam accusantium quidem facilis 
-            </p>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore ipsum possimus aut sint, eos eveniet 
-            </p>
+        <div class="icone">
+            <Account/>
+
+        </div>
+        <div class="icone">
+            <CartPlus/>
+
+        </div>
+        <div class="icone">
+            <Menu/>
+
+        </div>
     </div>
 </footer>
 
@@ -27,10 +32,23 @@
 footer {
     width: 100%;
     height: 100px;
+    background-color: red;
     text-align: center;
-    color: red;
     bottom: 0px;
     position: fixed;
 }
+
+.texto {
+    display: flex;
+    margin-top: 30px;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+}
+
+.icone {
+    border-bottom: 5px black solid;
+}
+
 </style>
 
